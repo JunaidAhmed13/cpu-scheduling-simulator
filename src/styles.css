@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f4f7;
+  color: #222;
+}
+
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 {
+  margin: 8px 0 16px;
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #d8dde3;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+th, td {
+  border: 1px solid #d8dde3;
+  padding: 6px 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+th {
+  background: #eef1f5;
+}
+
+input, select {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #b8c0ca;
+  border-radius: 4px;
+}
+
+td input {
+  width: 70px;
+  text-align: center;
+}
+
+button {
+  padding: 7px 14px;
+  font-size: 14px;
+  border: 1px solid #b8c0ca;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #eef1f5;
+}
+
+button.main {
+  background: #2f5d8a;
+  color: #fff;
+  border-color: #2f5d8a;
+}
+
+button.small {
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.settings {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.settings label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.note {
+  font-size: 13px;
+  color: #666;
+  margin: 4px 0 8px;
+}
+
+.error {
+  color: #c62828;
+  font-weight: bold;
+}
+
+.averages {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 15px;
+}
+
+/* Gantt chart */
+.gantt {
+  margin-bottom: 16px;
+  padding-right: 12px;
+}
+
+.gantt-row {
+  display: flex;
+  height: 42px;
+  border: 1px solid #333;
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  border-right: 1px solid #fff;
+  overflow: hidden;
+}
+
+.gantt-times {
+  position: relative;
+  height: 20px;
+  font-size: 12px;
+}
+
+.gantt-times span {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 3px;
+}
+
+/* comparison bar chart */
+.chart-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.chart-label {
+  width: 200px;
+  font-size: 14px;
+}
+
+.chart-bars {
+  flex: 1;
+}
+
+.bar {
+  height: 18px;
+  margin: 2px 0;
+  color: #fff;
+  font-size: 12px;
+  line-height: 18px;
+  padding-left: 4px;
+  box-sizing: border-box;
+  min-width: 34px;
+}
+
+.wt {
+  background: #4e79a7;
+}
+
+.tat {
+  background: #f28e2b;
+}
+
+.key {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+}
