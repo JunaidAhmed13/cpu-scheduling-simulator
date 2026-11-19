@@ -7,6 +7,8 @@ Group members:
 - Malik Junaid Ahmed (01-134242-061)
 - Bilawal Khokhar (01-134242-036)
 
+**Live version (no install needed):** https://junaidahmed13.github.io/cpu-scheduling-simulator/
+
 ## What it does
 
 It simulates these CPU scheduling algorithms:
@@ -21,9 +23,11 @@ For each run it shows a Gantt chart and the completion, turnaround, waiting and 
 
 **Our own feature:** you can set a *context switch time*. Each time the CPU moves from one process to a different one, that much time is added and appears as a `CS` block on the Gantt chart, so you can see how the overhead raises waiting and turnaround times (most of all in Round Robin).
 
+The page also has a dark/light mode button.
+
 ## How to run
 
-You need Node.js 18 or newer.
+Open the live version above, or run it on your own computer. You need Node.js 18 or newer.
 
 ```
 npm install
