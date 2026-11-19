@@ -1,14 +1,57 @@
+/* colours for light mode (default) */
+:root {
+  --bg: #f2f4f7;
+  --text: #222;
+  --muted: #666;
+  --card: #fff;
+  --border: #d8dde3;
+  --head: #eef1f5;
+  --input: #fff;
+  --input-border: #b8c0ca;
+  --main: #2f5d8a;
+  --idle: #e0e0e0;
+  --idle-text: #333;
+  --cs: #555555;
+  --gantt-border: #333;
+  --error: #c62828;
+}
+
+/* colours for dark mode (set by the switch button) */
+[data-theme="dark"] {
+  --bg: #16191d;
+  --text: #e6e8eb;
+  --muted: #a0a7b0;
+  --card: #22262c;
+  --border: #3a4049;
+  --head: #2c3138;
+  --input: #2c3138;
+  --input-border: #4a525c;
+  --main: #3d74ab;
+  --idle: #3a4049;
+  --idle-text: #d0d4d9;
+  --cs: #8a8f96;
+  --gantt-border: #8a8f96;
+  --error: #ef6b6b;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f2f4f7;
-  color: #222;
+  background: var(--bg);
+  color: var(--text);
 }
 
 .page {
   max-width: 1000px;
   margin: 0 auto;
   padding: 16px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 
 h1 {
@@ -22,8 +65,8 @@ h2 {
 }
 
 .card {
-  background: #fff;
-  border: 1px solid #d8dde3;
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 16px;
@@ -37,21 +80,23 @@ table {
 }
 
 th, td {
-  border: 1px solid #d8dde3;
+  border: 1px solid var(--border);
   padding: 6px 8px;
   text-align: center;
   font-size: 14px;
 }
 
 th {
-  background: #eef1f5;
+  background: var(--head);
 }
 
 input, select {
   padding: 5px;
   font-size: 14px;
-  border: 1px solid #b8c0ca;
+  border: 1px solid var(--input-border);
   border-radius: 4px;
+  background: var(--input);
+  color: var(--text);
 }
 
 td input {
@@ -62,20 +107,21 @@ td input {
 button {
   padding: 7px 14px;
   font-size: 14px;
-  border: 1px solid #b8c0ca;
+  border: 1px solid var(--input-border);
   border-radius: 4px;
-  background: #fff;
+  background: var(--card);
+  color: var(--text);
   cursor: pointer;
 }
 
 button:hover {
-  background: #eef1f5;
+  background: var(--head);
 }
 
 button.main {
-  background: #2f5d8a;
+  background: var(--main);
   color: #fff;
-  border-color: #2f5d8a;
+  border-color: var(--main);
 }
 
 button.small {
@@ -106,12 +152,12 @@ button.small {
 
 .note {
   font-size: 13px;
-  color: #666;
+  color: var(--muted);
   margin: 4px 0 8px;
 }
 
 .error {
-  color: #c62828;
+  color: var(--error);
   font-weight: bold;
 }
 
@@ -131,7 +177,7 @@ button.small {
 .gantt-row {
   display: flex;
   height: 42px;
-  border: 1px solid #333;
+  border: 1px solid var(--gantt-border);
 }
 
 .block {
@@ -140,7 +186,7 @@ button.small {
   justify-content: center;
   font-size: 12px;
   font-weight: bold;
-  border-right: 1px solid #fff;
+  border-right: 1px solid var(--card);
   overflow: hidden;
 }
 

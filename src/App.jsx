@@ -1,5 +1,5 @@
 // App.jsx - the GUI. It takes the input, calls scheduler.js and shows the results.
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ALGORITHMS } from "./scheduler.js";
 
 // sample input (same as test set A in the report)
@@ -14,8 +14,8 @@ const SAMPLE = [
 const COLORS = ["#4e79a7", "#f28e2b", "#59a14f", "#e15759", "#76b7b2", "#edc948", "#b07aa1", "#9c755f"];
 
 function colorOf(id) {
-  if (id === "IDLE") return "#e0e0e0";
-  if (id === "CS") return "#555555";
+  if (id === "IDLE") return "var(--idle)";
+  if (id === "CS") return "var(--cs)";
   return COLORS[(parseInt(id.slice(1)) - 1) % COLORS.length];
 }
 
@@ -27,6 +27,13 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [comparison, setComparison] = useState(null);
   const [error, setError] = useState("");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  // dark/light mode: put the theme on the <html> tag so styles.css can change the colours
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   // change one cell of the input table
   function updateCell(i, field, value) {
@@ -88,7 +95,12 @@ export default function App() {
 
   return (
     <div className="page">
-      <h1>CPU Scheduling Simulator</h1>
+      <div className="top">
+        <h1>CPU Scheduling Simulator</h1>
+        <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+          {theme === "light" ? "Dark mode" : "Light mode"}
+        </button>
+      </div>
 
       {/* ---------- input ---------- */}
       <div className="card">
@@ -200,7 +212,7 @@ function Gantt({ gantt }) {
         {gantt.map((b, i) => (
           <div key={i} className="block" title={`${b.id}: ${b.start} to ${b.end}`}
             style={{ width: ((b.end - b.start) / total) * 100 + "%", background: colorOf(b.id),
-              color: b.id === "IDLE" ? "#333" : "#fff" }}>
+              color: b.id === "IDLE" ? "var(--idle-text)" : "#fff" }}>
             {b.id}
           </div>
         ))}
